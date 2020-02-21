@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.10.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SE-EDU/LearningResources - PMD</title>
+  <title>SE-EDU/LearningResources - Writing Testable Javascript</title>
   <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
@@ -52,11 +52,11 @@
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
           <span id="toc">
 <ul class="px-0 site-nav-list">
-<li class="mt-2"><button class="dropdown-btn"><strong><strong>Programming Languages</strong></strong>
- <i class="dropdown-btn-icon">
+<li class="mt-2"><button class="dropdown-btn dropdown-btn-open"><strong><strong>Programming Languages</strong></strong>
+ <i class="dropdown-btn-icon rotate-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i>
           </button>
-          <div class="dropdown-container">
+          <div class="dropdown-container dropdown-container-open">
             <ul class="pl-3 site-nav-list">
               <li class="mt-2"><button class="dropdown-btn">C++
  <i class="dropdown-btn-icon">
@@ -91,12 +91,12 @@
                   </ul>
                 </div>
               </li>
-              <li class="mt-2"><button class="dropdown-btn">JavaScript
- <i class="dropdown-btn-icon">
+              <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">JavaScript
+ <i class="dropdown-btn-icon rotate-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-                <div class="dropdown-container">
+                <div class="dropdown-container dropdown-container-open">
                   <ul class="pl-3 site-nav-list">
-                    <li class="mt-2"><a href="/learningresources/contents/javascript/WritingTestableJavascript.html" class="site-nav__a">Writing Testable JavaScript Code</a></li>
+                    <li class="mt-2"><a href="/learningresources/contents/javascript/WritingTestableJavascript.html" class="site-nav__a current">Writing Testable JavaScript Code</a></li>
                     <li class="mt-2"><a href="/learningresources/contents/javascript/Javascript-promises.html" class="site-nav__a">Javascript Promises</a></li>
                     <li class="mt-2"><a href="/learningresources/contents/javascript/Javascript-modules.html" class="site-nav__a">Javascript Modules</a></li>
                     <li class="mt-2"><a href="/learningresources/contents/javascript/staticTypingInJavascript.html" class="site-nav__a">Static Typing in JavaScript</a></li>
@@ -121,10 +121,10 @@
             </ul>
           </div>
           </li>
-          <li class="mt-2"><button class="dropdown-btn dropdown-btn-open"><strong><strong>SE Topics</strong></strong>
- <i class="dropdown-btn-icon rotate-icon">
+          <li class="mt-2"><button class="dropdown-btn"><strong><strong>SE Topics</strong></strong>
+ <i class="dropdown-btn-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-            <div class="dropdown-container dropdown-container-open">
+            <div class="dropdown-container">
               <ul class="pl-3 site-nav-list">
                 <li class="mt-2"><button class="dropdown-btn">Architecture
  <i class="dropdown-btn-icon">
@@ -177,14 +177,14 @@
                   </div>
                 </li>
                 <li class="mt-2"><a href="/learningresources/contents/scalability/scalable-development.html" class="site-nav__a">Scalability</a></li>
-                <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">Static Analysis
- <i class="dropdown-btn-icon rotate-icon">
+                <li class="mt-2"><button class="dropdown-btn">Static Analysis
+ <i class="dropdown-btn-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-                  <div class="dropdown-container dropdown-container-open">
+                  <div class="dropdown-container">
                     <ul class="pl-3 site-nav-list">
                       <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/intro.html" class="site-nav__a">Introduction to Static Analysis</a></li>
                       <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/checkStyle.html" class="site-nav__a">CheckStyle</a></li>
-                      <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/PMD.html" class="site-nav__a current">PMD</a></li>
+                      <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/PMD.html" class="site-nav__a">PMD</a></li>
                       <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/FindBugs.html" class="site-nav__a">FindBugs</a></li>
                       <li class="mt-2"><a href="/learningresources/contents/staticAnalysis/ESLint.html" class="site-nav__a">ESLint</a></li>
                     </ul>
@@ -300,120 +300,225 @@
       <div id="content-wrapper">
         <div class="website-content">
           <p class="lead"><big><span><span class="dimmed"><strong>Learning Resources for Software Engineering Students</strong> »</span></span></big></p>
-          <h1 id="pmd">PMD<a class="fa fa-anchor" href="#pmd"></a></h1>
-          <p>Author: <a href="https://nus-oss.github.io/cs3281-website/students/AY1617S2/xiaoPu/xiaoPu-Resume.html">Xiao Pu</a></p>
-          <h2 id="overview">Overview<a class="fa fa-anchor" href="#overview"></a></h2>
-          <p>PMD is a static analyser for Java, JavaScript, <a href="http://Salesforce.com">Salesforce.com</a> Apex, PL/SQL, Apache Velocity, XML, XSL. The copy/paste-detector(<a href="http://pmd.sourceforge.net/pmd-4.3.0/cpd.html">CPD</a>), which helps
-            to find duplicated code, is also included as an add-on in PMD.</p>
-          <p><em>Note that the links in this chapter is based on <a href="https://pmd.github.io/pmd-5.5.3/">PMD version 5.5.3</a>. You can check the latest version and documentation at its <a href="https://pmd.github.io/">GitHub Page</a>.</em></p>
-          <h2 id="features">Features<a class="fa fa-anchor" href="#features"></a></h2>
-          <p>Rules in PMD represent patterns in code. PMD is supposed to check these rules(patterns) and signal violations to programmers. For example, the <code>OverrideBothEqualsAndHashcode</code> rule requires programmers to override both <code>public boolean Object.equals(Object other)</code>,
-            and <code>public int Object.hashCode()</code>, or override neither.</p>
-          <p>PMD supports checking rules for the following languages.</p>
-          <ul>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-java/index.html">Java</a> (includes <a href="https://pmd.github.io/pmd-5.5.3/pmd-java/index.html">JSP</a> with <a href="https://pmd.github.io/pmd-5.5.3/pmd-jsp/index.html">limitations</a>)</li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-javascript/index.html">JavaScript</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-apex/index.html">Apex</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-plsql/index.html">PL/SQL</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.4.1/pmd-vm/index.html">Velocity</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-xml/index.html">XML and XSL</a></li>
-          </ul>
-          <p>PMD doesn't support checking rules for the following languages. Only Copy/Paste Detector (<a href="http://pmd.sourceforge.net/pmd-4.3.0/cpd.html">CPD</a>) is supported for them.</p>
-          <ul>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-cs/index.html">C++</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-cpp/index.html">C#</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-fortran/index.html">Fortran</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-go/index.html">Go</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-groovy/index.html">Groovy</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-matlab/index.html">Matlab</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-objectivec/index.html">Objective-C</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-perl/index.html">Perl</a> (only very basic CPD support)</li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-php/index.html">PHP</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-python/index.html">Python</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-ruby/index.html">Ruby</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-swift/index.html">Swift</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/pmd-scala/index.html">Scala</a></li>
-          </ul>
-          <h2 id="limitation">Limitation<a class="fa fa-anchor" href="#limitation"></a></h2>
-          <p>Limitations are almost the same as <a href="/learningresources/contents/staticAnalysis/CheckStyle.html">CheckStyle</a>.</p>
-          <ul>
-            <li>The examined code has to be compilable. The reason is described in <a href="#how-does-it-work">How does it work</a> section.</li>
-            <li>Files will be examined one by one, which means you cannot check multiple files at the same time.
-              <ul>
-                <li>For example, you cannot determine the full inheritance hierarchy of a class as you need to examine the parent class while checking the child class.</li>
-              </ul>
-            </li>
-          </ul>
-          <h2 id="how-to-use-it">How to use it<a class="fa fa-anchor" href="#how-to-use-it"></a></h2>
-          <h3 id="download">Download<a class="fa fa-anchor" href="#download"></a></h3>
-          <p>PMD can be run on both Windows and Linux/Unix operating system with the help of <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">Java JRE</a> 1.7 or higher. Refer to <a href="https://pmd.github.io/pmd-5.5.3/usage/installing.html">How to install PMD and CPD</a>            for more details.</p>
-          <h3 id="configuration">Configuration<a class="fa fa-anchor" href="#configuration"></a></h3>
-          <p>You can configure PMD to only include the rules that your want (see <a href="https://pmd.github.io/pmd-5.5.3/customizing/howtomakearuleset.html">How to make a new rule set</a>).</p>
-          <h3 id="suppress-warnings">Suppress Warnings<a class="fa fa-anchor" href="#suppress-warnings"></a></h3>
-          <p>PMD supports suppressing warnings in four ways:</p>
-          <ul>
-            <li>Annotations</li>
-            <li>Comments</li>
-            <li>Violation Suppress Regex</li>
-            <li>Violation Suppress XPath</li>
-          </ul>
-          <p>The details are described <a href="https://pmd.github.io/pmd-5.5.3/usage/suppressing.html">here</a>.</p>
-          <h3 id="command-line-usage">Command Line Usage<a class="fa fa-anchor" href="#command-line-usage"></a></h3>
-          <p>PMD can be launched by using command line with various arguments. For details, please refer to <a href="https://pmd.github.io/pmd-5.5.3/usage/running.html">Running PMD via command line</a>.</p>
-          <h3 id="integration-with-build-automation-tools">Integration with Build Automation Tools<a class="fa fa-anchor" href="#integration-with-build-automation-tools"></a></h3>
-          <ul>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/usage/ant-task.html">Ant task usage</a></li>
-            <li><a href="https://docs.gradle.org/current/userguide/pmd_plugin.html">The PMD Plugin in Gradle</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/usage/maven-plugin.html">Maven 1 PMD plugin</a></li>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/usage/mvn-plugin.html">Maven 2 PMD plugin</a></li>
-          </ul>
-          <h3 id="integration-with-ides">Integration with IDEs<a class="fa fa-anchor" href="#integration-with-ides"></a></h3>
-          <p>PMD can be integrated with most of IDEs, inlcuding BlueJ, CodeGuide, Eclipse, eclipse-pmd, Emacs, Gel, IntelliJ IDEA, IntelliJ IDEA - QAPlug, JBuilder, JCreator, JDeveloper, JEdit, Maven, Maven 2, NetBeans, TextPad, WebLOgic Workshop 8.1.x.
-            For instruction to integrate with those IDEs, please refer to <a href="https://pmd.github.io/pmd-5.5.3/usage/integrations.html">PMD integrations</a>.</p>
-          <h2 id="available-rulesets">Available Rulesets<a class="fa fa-anchor" href="#available-rulesets"></a></h2>
-          <p>There is not pre-defined rules set. You need to <a href="https://pmd.github.io/pmd-5.5.3/customizing/howtomakearuleset.html">define your rule sets</a> by yourself.</p>
-          <p>PMD has organised rules into different categories. For example, the rules for Java has been categorised into 26 sections, which will help you quickly find the rules that you want.</p>
-          <p>You may refer to the <a href="#features">Features</a> section to view the rules according to your languages and refer to <a href="#configuration">Configuration</a> section to configure your rulesets.</p>
-          <h2 id="how-does-it-work">How does it work<a class="fa fa-anchor" href="#how-does-it-work"></a></h2>
-          <p>PMD use <a href="http://javacc.org">JavaCC</a> to parse your code to a <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST(Abstract Syntax Tree)</a> and visited it recursively (<a href="https://pmd.github.io/pmd-5.4.1/customizing/howitworks.html">more details</a>).
-            Thus, one of the requirements for PMD to work is that the code must be in valid Java syntax. You can view the syntax tree by using <a href="https://pmd.github.io/pmd-5.5.3/customizing/howtowritearule.html">bin/designer.bat</a></p>
-          <h2 id="customization">Customization<a class="fa fa-anchor" href="#customization"></a></h2>
-          <ul>
-            <li><a href="https://pmd.github.io/pmd-5.5.3/customizing/howtowritearule.html">How to write a PMD rule</a> (A quicker way to write rule sets <a href="https://pmd.github.io/pmd-5.4.1/customizing/xpathruletutorial.html">Using XPath in PMD</a>,
-              <a
-                href="https://pmd.github.io/pmd-5.4.1/customizing/xpathruletutorial.html">XPath Rule tutorial</a>)</li>
-            <li><a href="https://pmd.github.io/pmd-5.4.1/customizing/new-language.html">Add supports for new language</a> (<a href="https://pmd.github.io/pmd-5.4.1/customizing/cpd-parser-howto.html">Add supports for CPD</a>)</li>
-          </ul>
+          <h1 id="writing-testable-javascript">Writing Testable Javascript<a class="fa fa-anchor" href="#writing-testable-javascript"></a></h1>
+          <p>Authors: Li Kai</p>
+          <p>JavaScript is a powerful language. However, its flexibility leads to multiple ways for people to go about doing the same thing. The end result is that multiple collaborators working on a single project can produce different code that does the
+            same thing.
+          </p>
+          <p>That is why there is a need to follow a standard way of writing JavaScript - it allows for more maintainable cleaner and more beautiful code.</p>
+          <p>Good JavaScript code should be testable and reusable.</p>
+          <h2 id="writing-testable-javascript-2">Writing testable JavaScript<a class="fa fa-anchor" href="#writing-testable-javascript-2"></a></h2>
+          <h3 id="avoid-coupling-with-selectors">Avoid coupling with selectors<a class="fa fa-anchor" href="#avoid-coupling-with-selectors"></a></h3>
+          <p>When writing front end code we would encounter code that manipulates the document object model (DOM). Let's look at one such example.</p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> DIV_STATUS_MESSAGE = <span class="hljs-string">'#statusMessagesToUser'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">populateStatusMessageDiv</span>(<span class="hljs-params">message, status</span>) </span>{
+    <span class="hljs-keyword">var</span> $statusMessageDivToUser = $(DIV_STATUS_MESSAGE);
+    ...
+}
+</code></pre>
+          <p>In this piece of code, we see that the selector is intrinsically tied to the function. This means that the function is tightly tied with the selector and is not easily testable as the test code has to generate the same markup in the test suite
+            for the function to hook up to. In order to prevent such tight coupling, it is advised to leave the selector as a parameter, or sometimes, simply pass in the element itself.</p>
+          <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">populateStatusMessage</span>(<span class="hljs-params">selector, message, status</span>) </span>{
+    <span class="hljs-keyword">var</span> $statusMessageDivToUser = $(selector);
+    ...
+}
+</code></pre>
+          <h3 id="split-business-logic-and-presentation-code">Split business logic and presentation code<a class="fa fa-anchor" href="#split-business-logic-and-presentation-code"></a></h3>
+          <p>When we have to write code that generates markup, it requires business logic. However, mixing the two up is not a good idea. Let's look at the following example:</p>
+          <pre><code class="hljs js">$.ajax({
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">url</span>: <span class="hljs-string">'/admin/adminStudentGoogleIdReset?'</span> + params,
+    <span class="hljs-attr">beforeSend</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        $(button).html(<span class="hljs-string">"&lt;img src="</span>/images/ajax-loader.gif<span class="hljs-string">"/&gt;"</span>);
+    },
+    <span class="hljs-attr">error</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        $(button).html(<span class="hljs-string">'An Error Occurred, Please Retry'</span>);
+    },
+    <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+        ...
+    }
+});
+</code></pre>
+          <p>It order to test such a function, we would now have to incorporate both logic and also the mock-up generated. Splitting the logic and markup into two separate functions will both make it easier to test and composable because now you can reuse
+            code that generates the markup in multiple places.</p>
+          <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setLoadingImage</span>(<span class="hljs-params">selector</span>) </span>{
+    $(selector).html(<span class="hljs-string">"&lt;img src="</span>/images/ajax-loader.gif<span class="hljs-string">"/&gt;"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setErrorText</span>(<span class="hljs-params">selector</span>) </span>{
+    $(selector).html(<span class="hljs-string">'An Error Occurred, Please Retry'</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayResults</span>(<span class="hljs-params">data</span>) </span>{
+    ...
+}
+
+$.ajax({
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">url</span>: <span class="hljs-string">'/admin/adminStudentGoogleIdReset?'</span> + params,
+    <span class="hljs-attr">beforeSend</span>: setLoadingImage,
+    <span class="hljs-attr">error</span>: setErrorText,
+    <span class="hljs-attr">success</span>: displayResults
+});
+</code></pre>
+          <p>Already, we are seeing some of the patterns that lead to the MVC, albeit in a very small scale.</p>
+          <h3 id="avoid-big-anonymous-functions">Avoid big anonymous functions<a class="fa fa-anchor" href="#avoid-big-anonymous-functions"></a></h3>
+          <p>Although anonymous functions can lead to cleaner and shorter code, critical business logic should not be written in anonymous functions. The lack of namespace makes them impossible to test. This is common, and tempting when the code starts off
+            in a <code>document.ready()</code> or <code>$.ajax()</code>.</p>
+          <p>The testable way of writing such function is to simply give the function a name, which allows it to be tested.</p>
+          <pre><code class="hljs js">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    bindStudentPhotoLink(<span class="hljs-string">'.profile-pic-icon-view-link'</span>);
+    ...
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bindStudentPhotoLink</span>(<span class="hljs-params">selector</span>) </span>{
+    ...
+}
+</code></pre>
+          <p>Of course, this may be a problem if two Javascript functions have the same name, as they are all in the global scope. This is where the module pattern (see: <a href="">Namespacing in Javascript</a>) can be used.</p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> myApp = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-keyword">var</span> id= <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">next</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> id++;
+        },
+
+        <span class="hljs-attr">reset</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            id = <span class="hljs-number">0</span>;
+        }
+    };
+})();
+</code></pre>
+          <p>As demonstrated above, only <code>myApp</code> is declared in the global scope, and we can access its methods through the object notation, e.g. <code>myApp.next()</code>. This is also especially useful to declare private variables that be used
+            among functions. <code>id</code> is not accessible outside of scope in this example.</p>
+          <h3 id="purity-is-worth-pursuing">Purity is worth pursuing<a class="fa fa-anchor" href="#purity-is-worth-pursuing"></a></h3>
+          <p>There are tonnes of literature about functional programming. I will heavily recommend reading the <a href="https://github.com/MostlyAdequate/mostly-adequate-guide">Mostly adequate guide to Functional Programming</a>. It explains functional concepts
+            extremely well.</p>
+          <p>The benefit of pure functions is simple, there is no need to keep track of state. Given an input, the output is guaranteed to be the same every time. This allows us to write extremely simple unit tests, instead of having to maintain the state
+            while testing.
+          </p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> todos = [];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTodo</span>(<span class="hljs-params"></span>) </span>{
+    counter++;
+    <span class="hljs-keyword">if</span> (counter &lt; todos.length) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'NIL'</span>;
+    }
+    <span class="hljs-keyword">return</span> todos[counter];
+}
+...
+getTodo();
+</code></pre>
+          <p>The above function <code>getTodo</code> is not stateless as it depends on counter's value. In order to write the tests, we would need to ensure counter is reset to the same value at the end of each test. A better way would be to do this:</p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">var</span> todos = [];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTodo</span>(<span class="hljs-params">counter, todos</span>) </span>{
+    <span class="hljs-keyword">if</span> (counter &lt; todos.length) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'NIL'</span>;
+    }
+    <span class="hljs-keyword">return</span> todos[counter + <span class="hljs-number">1</span>];
+}
+...
+getTodo(counter, todos);
+</code></pre>
+          <p>Now, not only that the person who writes the unit test can write in fewer lines of code, you can also use the function for some other state other than the global values.</p>
+          <h2 id="writing-reusable-javascript">Writing reusable javascript<a class="fa fa-anchor" href="#writing-reusable-javascript"></a></h2>
+          <h3 id="optional-parameters">Optional parameters<a class="fa fa-anchor" href="#optional-parameters"></a></h3>
+          <p>When writing certain functions, there would be certain situations where we want to have optional parameters. The easiest way would be to put optional parameters at the end of the parameter calls, like such:</p>
+          <pre><code class="hljs js"><span class="hljs-comment">// es5 syntax</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPopUp</span>(<span class="hljs-params">title, content, status, headerColor, bodyColor</span>) </span>{
+    <span class="hljs-keyword">var</span> headerColor = headerColor || <span class="hljs-string">'default'</span>;
+    <span class="hljs-keyword">var</span> bodyColor = bodyColor || <span class="hljs-string">'default'</span>;
+    ...
+}
+
+<span class="hljs-comment">// es6 syntax default parameters</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPopUp</span>(<span class="hljs-params">title, content, status, headerColor = <span class="hljs-string">'default'</span>, bodyColor = <span class="hljs-string">'default'</span></span>) </span>{
+    ...
+}
+</code></pre>
+          <p>This is relatively simple and easy to understand. However, in order to specify body color, the user would have to know and fill in the default header color.</p>
+          <pre><code class="hljs js"><span class="hljs-comment">// es5 syntax</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPopUp</span>(<span class="hljs-params">title, content, status, optionals</span>) </span>{
+    <span class="hljs-keyword">var</span> headerColor = optionals.headerColor || <span class="hljs-string">'default'</span>;
+    <span class="hljs-keyword">var</span> bodyColor = optionals.bodyColor || <span class="hljs-string">'default'</span>;
+    ...
+}
+<span class="hljs-comment">// es6 syntax with destructuring and default parameters</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPopUp</span>(<span class="hljs-params">title, content, status, optionals</span>) </span>{
+    <span class="hljs-keyword">const</span> { headerColor = <span class="hljs-string">'default'</span>, bodyColor = <span class="hljs-string">'default'</span> } = optionals;
+    ...
+}
+</code></pre>
+          <p>By using an object, the user would just need to fill in what parameter they want to be changed. In large functions, this would result in better readability as well.</p>
+          <pre><code class="hljs js">createPopUp(<span class="hljs-string">'Warning'</span>, <span class="hljs-string">'This will delete everything!'</span>, dangerStatus, { <span class="hljs-attr">bodyColor</span>: <span class="hljs-string">'red'</span> });
+</code></pre>
+          <h3 id="understand-method-chaining">Understand method chaining<a class="fa fa-anchor" href="#understand-method-chaining"></a></h3>
+          <p>Method chaining is syntax such as <code>array.concat([1, 2]).push(1).filter(isEven)</code>. It is also sometimes referred to as the fluent interface. (see: <a href="">Method Chaining in JavaScript</a>)</p>
+          <p>It is achieved by returning the object itself in the call.</p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = {
+    <span class="hljs-attr">save</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// some procedures</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+};
+</code></pre>
+          <p>Method chaining can be found in other languages but it is very common in Javascript. It can be found in libraries such as JQuery and lodash. Compare the two snippets below:</p>
+          <pre><code class="hljs js"><span class="hljs-keyword">var</span> bob = <span class="hljs-keyword">new</span> Person();
+
+bob.setName(<span class="hljs-string">'Bob'</span>);
+bob.setAge(<span class="hljs-number">16</span>);
+bob.setGender(<span class="hljs-string">'male'</span>);
+
+bob.save();
+</code></pre>
+          <pre><code class="hljs js"><span class="hljs-keyword">new</span> Person()
+  .setName(<span class="hljs-string">'Bob'</span>)
+  .setAge(<span class="hljs-number">16</span>)
+  .setGender(<span class="hljs-string">'male'</span>)
+  .save();
+</code></pre>
+          <p>Not only is the method chaining much shorter, it also makes the code more maintainable by keeping properties organised nicely and easily traceable in version control.</p>
+          <p>However, like any design pattern, this is not to be abused. Only use method chaining when methods are related to the object at hand.</p>
+          <h3 id="addendum">Addendum<a class="fa fa-anchor" href="#addendum"></a></h3>
+          <p>As with all guides, this list of good practices and advices are not exhausive. Good code takes practice and finese, and if you discover ways to make code better, feel free to contribute and add them to this document!</p>
           <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources"></a></h2>
-          <ul>
-            <li><a href="https://pmd.github.io/">PMD</a>: PMD official website. You can download the latest version, view online documentation there.</li>
-            <li><a href="https://github.com/pmd/pmd">PMD Github</a>: PMD GitHub page. You can contribute to the project or report bugs there.</li>
-            <li><a href="https://stackoverflow.com/questions/tagged/pmd">StackOverflow PMD</a>: Question/Answer forum in StackOverflow for PMD. You can ask question related to the using of PMD.</li>
-          </ul>
+          <p><a href="https://github.com/ryanmcdermott/clean-code-javascript">Clean Code Javascript</a> Apparently most of what I wrote appears in this huge guide in some form. It's an amazing resource and also explains SOLID clearly near the bottom.</p>
+          <p><a href="https://github.com/airbnb/javascript">Airbnb Javascript Style</a> It is one thing to follow the style guide, and another to understand why it is that way. Understanding why Airbnb chose certain constructs and syntax reveals ways to
+            write code that is clean, understandable and maintainable.</p>
+          <p><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">JavaScript Design Patterns</a> The title says it all. From the most common to obscure patterns, this book covers design patterns and explains trade offs. Although it
+            specifically caters to Javascript, it's recommended reading for all prospective software engineers.</p>
+          <h2 id="references">References<a class="fa fa-anchor" href="#references"></a></h2>
+          <p><a href="https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/">Namespacing in Javascript</a></p>
+          <p><a href="https://schier.co/blog/2013/11/14/method-chaining-in-javascript.html">Method Chaining in JavaScript</a></p>
         </div>
       </div>
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
           <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#pmd">PMD&#x200E;</a>
+            <a class="nav-link py-1" href="#writing-testable-javascript">Writing Testable Javascript&#x200E;</a>
             <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#overview">Overview&#x200E;</a>
-              <a class="nav-link py-1" href="#features">Features&#x200E;</a>
-              <a class="nav-link py-1" href="#limitation">Limitation&#x200E;</a>
-              <a class="nav-link py-1" href="#how-to-use-it">How to use it&#x200E;</a>
+              <a class="nav-link py-1" href="#writing-testable-javascript-2">Writing testable JavaScript&#x200E;</a>
               <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#download">Download&#x200E;</a>
-                <a class="nav-link py-1" href="#configuration">Configuration&#x200E;</a>
-                <a class="nav-link py-1" href="#suppress-warnings">Suppress Warnings&#x200E;</a>
-                <a class="nav-link py-1" href="#command-line-usage">Command Line Usage&#x200E;</a>
-                <a class="nav-link py-1" href="#integration-with-build-automation-tools">Integration with Build Automation Tools&#x200E;</a>
-                <a class="nav-link py-1" href="#integration-with-ides">Integration with IDEs&#x200E;</a>
+                <a class="nav-link py-1" href="#avoid-coupling-with-selectors">Avoid coupling with selectors&#x200E;</a>
+                <a class="nav-link py-1" href="#split-business-logic-and-presentation-code">Split business logic and presentation code&#x200E;</a>
+                <a class="nav-link py-1" href="#avoid-big-anonymous-functions">Avoid big anonymous functions&#x200E;</a>
+                <a class="nav-link py-1" href="#purity-is-worth-pursuing">Purity is worth pursuing&#x200E;</a>
               </nav>
-              <a class="nav-link py-1" href="#available-rulesets">Available Rulesets&#x200E;</a>
-              <a class="nav-link py-1" href="#how-does-it-work">How does it work&#x200E;</a>
-              <a class="nav-link py-1" href="#customization">Customization&#x200E;</a>
+              <a class="nav-link py-1" href="#writing-reusable-javascript">Writing reusable javascript&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#optional-parameters">Optional parameters&#x200E;</a>
+                <a class="nav-link py-1" href="#understand-method-chaining">Understand method chaining&#x200E;</a>
+                <a class="nav-link py-1" href="#addendum">Addendum&#x200E;</a>
+              </nav>
               <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
+              <a class="nav-link py-1" href="#references">References&#x200E;</a>
             </nav>
 
           </nav>
